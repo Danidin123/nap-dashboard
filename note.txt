@@ -1,0 +1,15 @@
+create the file below:
+vi /var/tmp/waf.json
+{
+  "filter": {
+    "request_type": "all"
+  },
+  "content": {
+    "format": "splunk",
+    "max_request_size": "any",
+    "max_message_size": "10k"
+  }
+}
+
+snipprt:
+app_protect_security_log /var/tmp/waf.json syslog:server=172.17.0.1:515;
